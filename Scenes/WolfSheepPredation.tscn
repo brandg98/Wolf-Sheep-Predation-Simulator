@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/FieldMap.tscn" type="PackedScene" id=1]
+
+[node name="WolfSheepPredation" type="Node"]
+
+[node name="FieldMap" parent="." instance=ExtResource( 1 )]
+margin_left = 300.0
+margin_right = -73.9999
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 300.0
+margin_bottom = 650.0
+rect_min_size = Vector2( 300, 650 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TickButton" type="Button" parent="Panel"]
+margin_left = 89.2801
+margin_top = 135.602
+margin_right = 179.28
+margin_bottom = 155.602
+text = "Tick"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Panel/TickButton" to="FieldMap" method="_on_TickButton_pressed"]
