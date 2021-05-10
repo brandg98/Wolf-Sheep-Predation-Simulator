@@ -6,11 +6,10 @@ var regrowTime = 30
 var timeToGrow = 0
 var fullyGrown = true
 
-var occupied = false
+var occupied = 0
+var occupant = null
 var index
 var adjacent_patches = []
-
-var occupant # = iswolf, issheep, or isgrass
 
 onready var patchRect = get_node("PatchRect")
 onready var label = get_node("Label")
@@ -19,8 +18,10 @@ func _ready():
 	tick()
 
 func tick():
-	if occupied:
-		label.text = "0"
+	if occupied == 2:
+		label.text = ""
+	elif occupied == 1:
+		label.text = ""
 	else:
 		label.text = ""
 	
